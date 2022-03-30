@@ -27,15 +27,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.button).setOnClickListener{ //ao cliclar no buttao chama a nossa Activity/Page
             //openPhoneCamera()
             //openDetailsActivity()
-            //openAlertDialog()
-            openSnackBar(it)
+            openAlertDialog()
+            //openSnackBar(it)
 
         }
-    }
-
-    fun openSnackBar(view: View){
-        val snackbar = Snackbar.make(view, "Que caes bonitos",1000)
-        snackbar.show()
     }
 
     override fun onResume() {
@@ -92,10 +87,13 @@ class MainActivity : AppCompatActivity() {
         alertDialog.setNegativeButton("Cancel",DialogInterface.OnClickListener{
             dialogInterface, i ->  dialogInterface.cancel()
         })
-        val alert = alertDialog.create()
-        alert.show()
+        alertDialog.create().show()
     }
 
+    fun openSnackBar(view: View){
+        val snackbar = Snackbar.make(view, "Que caes bonitos",1000)
+        snackbar.show()
+    }
 
 
 }
