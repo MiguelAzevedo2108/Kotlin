@@ -11,4 +11,6 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
     }
 
+
+
 }

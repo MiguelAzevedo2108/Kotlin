@@ -1,15 +1,18 @@
 package com.example.bobi
 
-import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import com.google.android.material.snackbar.Snackbar
 
 private const val REQUEST_IMAGE_CAPTURE = 100 //valor qualquer
 
@@ -23,9 +26,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         findViewById<Button>(R.id.button).setOnClickListener{ //ao cliclar no buttao chama a nossa Activity/Page
             //openPhoneCamera()
-            openDetailsActivity()
+            //openDetailsActivity()
+            //openAlertDialog()
+            openSnackBar(it)
 
         }
+    }
+
+    fun openSnackBar(view: View){
+        val snackbar = Snackbar.make(view, "Que caes bonitos",1000)
+        snackbar.show()
     }
 
     override fun onResume() {
@@ -71,4 +81,21 @@ class MainActivity : AppCompatActivity() {
         }
         timer.start()
     }
+
+    private fun openAlertDialog(){
+        val alertDialog = AlertDialog.Builder(this)
+        alertDialog.setTitle("Bobi")
+        alertDialog.setMessage("Mas que caes tao bonitos")
+        alertDialog.setPositiveButton("Yes", DialogInterface.OnClickListener {
+            dialogInterface, i ->  dialogInterface.dismiss()
+        })
+        alertDialog.setNegativeButton("Cancel",DialogInterface.OnClickListener{
+            dialogInterface, i ->  dialogInterface.cancel()
+        })
+        val alert = alertDialog.create()
+        alert.show()
+    }
+
+
+
 }
