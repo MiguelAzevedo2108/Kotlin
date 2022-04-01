@@ -24,13 +24,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        findViewById<Button>(R.id.button).setOnClickListener{ //ao cliclar no buttao chama a nossa Activity/Page
+        //findViewById<Button>(R.id.button).setOnClickListener{ //ao cliclar no buttao chama a nossa Activity/Page
             //openPhoneCamera()
             //openDetailsActivity()
-            openAlertDialog()
+            //openAlertDialog()
             //openSnackBar(it)
 
-        }
+        //}
     }
 
     override fun onResume() {
