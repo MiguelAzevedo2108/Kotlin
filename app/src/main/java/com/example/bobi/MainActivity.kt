@@ -16,6 +16,9 @@ import com.google.android.material.snackbar.Snackbar
 
 private const val REQUEST_IMAGE_CAPTURE = 100 //valor qualquer
 
+
+private const val FIFI = "https://github.com/android-training-program/aula-5/blob/master/images/fifi.jpg?raw=true"
+
 class MainActivity : AppCompatActivity() {
 
     private var untilFinished = 10000L
@@ -24,9 +27,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        openDetailsActivity()
         //findViewById<Button>(R.id.button).setOnClickListener{ //ao cliclar no buttao chama a nossa Activity/Page
-            //openPhoneCamera()
-            //openDetailsActivity()
+        //openDetailsActivity()
             //openAlertDialog()
             //openSnackBar(it)
 
@@ -52,15 +55,13 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
     }
 
-    private fun openPhoneCamera(){
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE) //usar camera do telemovel
-        startActivityForResult(intent, REQUEST_IMAGE_CAPTURE)
-    }
+
 
     private fun openDetailsActivity(){
-        val intent = Intent(this,DetailsActivity::class.java)
+        val intent = Intent(this,ListActivity::class.java)
         startActivity(intent)
     }
+
 
     private fun startCountDownTimer(time :Long){
         timer = object: CountDownTimer(time, 10000){

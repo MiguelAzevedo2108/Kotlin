@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:background="@android:color/white"
-        android:backgroundTint="#2196F3"
+        android:backgroundTint="#15629F"
         android:ems="10"
         android:hint="@string/hint_username"
         android:inputType="textPersonName"
@@ -27,16 +27,6 @@
 
         />
 
-    <EditText
-        android:id="@+id/fill_password"
-        android:layout_width="match_parent"
-        android:layout_height="57dp"
-        android:ems="10"
-        android:hint="@string/hint_password"
-        android:inputType="textPassword"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white" />
-
     <TextView
         android:id="@+id/wrong_credentials"
         android:layout_width="match_parent"
@@ -44,6 +34,18 @@
         android:text="@string/invalid_credentials"
         android:textColor="@android:color/holo_red_dark"
         android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/fill_password"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:background="@android:color/white"
+        android:backgroundTint="#15629F"
+        android:ems="10"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -66,4 +68,5 @@
         android:textColor="#FFFFFF"
         app:iconTint="#A81F1F"
         app:rippleColor="@android:color/background_light" />
+
 </LinearLayout>
