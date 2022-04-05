@@ -10,5 +10,4 @@ interface DogsApi{
     @GET(BREEDS)
     fun getBreedList(): retrofit2.Call<List<Breed>>
 
-
 }

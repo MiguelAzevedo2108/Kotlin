@@ -23,7 +23,7 @@ object DogsApiClient : AppCompatActivity(){
             .create()
     }
 
-     fun getListOfBreeds(listener: DataRetriever) {
+     fun getBreedList(listener: DataRetriever) {
          apiDog.getBreedList().enqueue(object : Callback<List<Breed>> {
              override fun onResponse(call: Call<List<Breed>>, response: Response<List<Breed>>) {
                  Log.d(TAG, "onResponse: ${response.body()}")

@@ -1,7 +1,6 @@
 package com.example.bobi
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bobi.data.DogsApiClient
@@ -15,7 +14,7 @@ class ListActivity : AppCompatActivity(), DataRetriever{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
         
-        DogsApiClient.getListOfBreeds(this)
+        DogsApiClient.getBreedList(this)
     }
 
     override fun onDataFetchedSuccess(breed: List<Breed>) {
